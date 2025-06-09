@@ -17,6 +17,7 @@ color = Color(0.716296, 0.716296, 0.716296, 1)
 polygon = PackedVector2Array(382, 357, 548, 383, 714, 383, 899, 357, 899, 612, 382, 612)
 
 [node name="Rim" type="Line2D" parent="PotFront"]
+z_as_relative = false
 points = PackedVector2Array(386, 355, 540, 346, 708, 346, 895, 355, 715, 385, 548, 383, 397, 360)
 default_color = Color(0.894922, 0.894922, 0.894922, 1)
 
@@ -53,13 +54,10 @@ shape = SubResource("RectangleShape2D_tt100")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Recipe" parent="CanvasLayer" instance=ExtResource("2_4lcu2")]
-position = Vector2(332, 211)
+position = Vector2(60, 173)
 scale = Vector2(2.8761, 2.5815)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-257, -128, -192, -129, -215, 101, 190, 101, 168, -125, 251, -125, 251, 126, -259, 125)
 
 [connection signal="body_entered" from="CollectionZone" to="." method="_on_collection_zone_body_entered"]

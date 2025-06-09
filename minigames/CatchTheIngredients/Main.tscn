@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbsxwfmyo0pvu"]
+[gd_scene load_steps=6 format=3 uid="uid://cbsxwfmyo0pvu"]
 
 [ext_resource type="Script" uid="uid://cyjeorhlgbnd" path="res://minigames/CatchTheIngredients/main.gd" id="1_01llf"]
 [ext_resource type="PackedScene" uid="uid://cskwqr63a2jff" path="res://minigames/CatchTheIngredients/SoupPot.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://iafyqweu5qvw" path="res://minigames/CatchTheIngredients/IngredientSpawner.tscn" id="2_d47tq"]
+[ext_resource type="PackedScene" uid="uid://e1uyeuwskgos" path="res://IngredientsTrackerUI.tscn" id="4_01llf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
 size = Vector2(31, 674)
@@ -12,9 +13,11 @@ script = ExtResource("1_01llf")
 
 [node name="SoupPot" parent="." instance=ExtResource("1_glv2v")]
 position = Vector2(969, 1078)
+collision_mask = 2
 speed = 20
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(8, 727)
@@ -25,10 +28,18 @@ position = Vector2(1920, 727)
 shape = SubResource("RectangleShape2D_uu6xs")
 
 [node name="IngredientSpawner" parent="." instance=ExtResource("2_d47tq")]
-position = Vector2(217, 0)
+position = Vector2(227, -112)
 
 [node name="IngredientSpawner2" parent="." instance=ExtResource("2_d47tq")]
-position = Vector2(596, -2)
+position = Vector2(627, -114)
 
 [node name="IngredientSpawner3" parent="." instance=ExtResource("2_d47tq")]
-position = Vector2(982, 2)
+position = Vector2(990, -110)
+
+[node name="IngredientSpawner4" parent="." instance=ExtResource("2_d47tq")]
+position = Vector2(1293, -136)
+
+[node name="IngredientSpawner5" parent="." instance=ExtResource("2_d47tq")]
+position = Vector2(1654, -120)
+
+[node name="IngredientsTrackerUI" parent="." instance=ExtResource("4_01llf")]

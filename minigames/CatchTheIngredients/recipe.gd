@@ -14,8 +14,19 @@ func _ready() -> void:
 	generate_recipe()
 
 func generate_recipe():
-	meat_required = randi_range(3, 15)
-	veggies_required = randi_range(3, 15)
+	var meat_max = 0
+	var veggie_max = 0
+	#Collect quantities of ingredients
+	for ingredient in IngredientsTracker.ingredients_prepared:
+		match ingredient.name:
+			"Veggie":
+				veggie_max = ingredient.quantity
+			"Meat":
+				meat_max = ingredient.quantity
+
+	meat_required = randi_range(1, clampi(5, 1, meat_max))
+	veggies_required = randi_range(1, clampi(5, 1, veggie_max))
+	$AnimationPlayer.play("flip")
 	update_view()
 
 func collect_veggie():
@@ -44,8 +55,8 @@ func collect_meat():
 	update_view()
 
 func update_view():
-	$Background/VeggieLabel.text = str(veggies_collected) + "/" + str(veggies_required)
-	$Background/MeatLabel.text = str(meat_collected) + "/" + str(meat_required)
+	$Background/VeggieSprite/VeggieLabel.text = str(veggies_collected) + "/" + str(veggies_required)
+	$Background/MeatSprite/MeatLabel.text = str(meat_collected) + "/" + str(meat_required)
 
 func reset():
 	veggies_collected = 0

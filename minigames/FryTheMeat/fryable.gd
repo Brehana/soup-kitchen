@@ -18,5 +18,6 @@ func cook():
 	$Polygon2D.color = Color(r,g,b,a)
 	
 	if cooked == max_cooked:
-		queue_free()
 		fryable_cooked.emit()
+		IngredientsTracker.add_ingredient(IngredientRecord.new("Meat", "res://minigames/CatchTheIngredients/MeatIngredient.tscn", 1))
+		queue_free() 

@@ -7,6 +7,7 @@
 radius = 22.0227
 
 [node name="Ingredient" type="RigidBody2D"]
+can_sleep = false
 script = ExtResource("1_hrquu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

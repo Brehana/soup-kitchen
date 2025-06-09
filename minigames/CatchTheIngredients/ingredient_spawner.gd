@@ -37,7 +37,7 @@ func _on_timer_timeout() -> void:
 	
 	var scene = load(ingredient.filepath)
 	var instance = scene.instantiate()
-	get_tree().root.add_child(instance)
+	get_tree().current_scene.add_child(instance)
 	instance.position = position
 	
 	$Timer.wait_time = randf_range(1, 3)

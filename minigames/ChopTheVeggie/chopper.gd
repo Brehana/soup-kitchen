@@ -16,7 +16,7 @@ var cut_valid = false
 ##and invalid when we don't
 func _process(_delta: float) -> void:
 	position.y = y_transform
-	if Input.is_action_just_pressed("left_click"):
+	if Input.is_action_just_pressed("interact"):
 		$AnimationPlayer.pause()
 		animation_progress = $AnimationPlayer.current_animation_position  
 		if cut_valid == true:

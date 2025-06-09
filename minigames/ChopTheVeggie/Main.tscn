@@ -3,22 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://c2b36pa5miue" path="res://minigames/ChopTheVeggie/Chopper.tscn" id="1_pnux8"]
 [ext_resource type="Script" uid="uid://r6fv47nssbh4" path="res://minigames/ChopTheVeggie/chop_game.gd" id="1_s4bpb"]
 [ext_resource type="PackedScene" uid="uid://cfhxe5pl71duj" path="res://minigames/ChopTheVeggie/Carrot.tscn" id="2_s4bpb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_5hw5i"]
-font_size = 61
+[ext_resource type="PackedScene" uid="uid://e1uyeuwskgos" path="res://IngredientsTrackerUI.tscn" id="4_pdrmh"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_s4bpb")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="VegetablesChoppedScore" type="Label" parent="CanvasLayer"]
-offset_left = 39.0
-offset_top = 33.0
-offset_right = 81.0
-offset_bottom = 56.0
-text = "score"
-label_settings = SubResource("LabelSettings_5hw5i")
 
 [node name="ChoppableRespawnTimer" type="Timer" parent="."]
 one_shot = true
@@ -27,6 +15,8 @@ one_shot = true
 
 [node name="Choppable" parent="." instance=ExtResource("2_s4bpb")]
 position = Vector2(-1, 0)
+
+[node name="IngredientsTrackerUI" parent="." instance=ExtResource("4_pdrmh")]
 
 [connection signal="timeout" from="ChoppableRespawnTimer" to="." method="_on_choppable_respawn_timer_timeout"]
 [connection signal="fully_chopped" from="Choppable" to="." method="_on_choppable_fully_chopped"]

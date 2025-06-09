@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cyp7m2712qqpi"]
+[gd_scene load_steps=10 format=3 uid="uid://cyp7m2712qqpi"]
 
 [ext_resource type="Script" uid="uid://dyvtnybh3waej" path="res://minigames/FryTheMeat/main.gd" id="1_m8msn"]
 [ext_resource type="PackedScene" uid="uid://bqyqv5aoq32vg" path="res://minigames/FryTheMeat/Pan.tscn" id="1_ptuye"]
+[ext_resource type="PackedScene" uid="uid://e1uyeuwskgos" path="res://IngredientsTrackerUI.tscn" id="3_ylocl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5a1q1"]
 friction = 0.0
@@ -22,7 +23,6 @@ font_size = 41
 font_size = 54
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(-1, 2)
 script = ExtResource("1_m8msn")
 
 [node name="Pan" parent="." instance=ExtResource("1_ptuye")]
@@ -128,6 +128,8 @@ offset_right = 646.0
 offset_bottom = 97.0
 text = "60"
 label_settings = SubResource("LabelSettings_ylocl")
+
+[node name="IngredientsTrackerUI" parent="." instance=ExtResource("3_ylocl")]
 
 [connection signal="timeout" from="Pan/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="FryableLossArea" to="." method="_on_fryable_loss_area_body_entered"]

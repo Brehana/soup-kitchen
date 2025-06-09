@@ -15,4 +15,5 @@ metadata/_custom_type_script = "uid://8ivn2646fbmp"
 record = SubResource("Resource_7if7c")
 
 [node name="Sprite2D" parent="." index="1"]
+z_index = 1
 texture = ExtResource("1_kpilx")

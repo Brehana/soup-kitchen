@@ -12,13 +12,11 @@ func _ready() -> void:
 func spawn_fryable():
 	var scene = load("res://minigames/FryTheMeat/Meat.tscn")
 	var instance = scene.instantiate()
-	get_tree().root.call_deferred("add_child", instance)
+	get_tree().current_scene.call_deferred("add_child", instance)
 	instance.position = $FryableSpawnMarker.position + Vector2(randf_range(0,1), randf_range(0,1))
 	print(instance.position)
 	
 	instance.fryable_cooked.connect(spawn_fryable)
-	instance.fryable_cooked.connect(update_score_counter)
-	instance.fryable_cooked.connect(update_ingredients_tracker("Meat", 1))
 	
 	fryables_in_scene = fryables_in_scene + 1
 

@@ -10,6 +10,7 @@ size = Vector2(28.5, 641)
 radius = 18.2483
 
 [node name="Choppable" type="Node2D"]
+scale = Vector2(1.68, 1.68)
 script = ExtResource("1_m5jti")
 
 [node name="Quarter1" type="Polygon2D" parent="."]

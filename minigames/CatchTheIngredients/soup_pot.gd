@@ -44,4 +44,4 @@ func _on_collection_zone_body_entered(body: Node2D) -> void:
 	
 
 func _on_recipe_recipe_completed() -> void:
-	IngredientsTracker.soup_prepared.quantity += 1
+	IngredientsTracker.add_ingredient(IngredientRecord.new("Pot", "N/A", 1))
