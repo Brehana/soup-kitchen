@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://db5f76eqc2w5k"]
+
+[ext_resource type="PackedScene" uid="uid://c0erh0ntedsj8" path="res://KitchenTileMap.tscn" id="1_haeiw"]
+[ext_resource type="PackedScene" uid="uid://dpn2w05imu6o" path="res://EntranceArea.tscn" id="2_b5kf5"]
+[ext_resource type="PackedScene" uid="uid://dew3xfc3qwsiy" path="res://chef.tscn" id="3_hvuor"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="KitchenTileMap" parent="." instance=ExtResource("1_haeiw")]
+
+[node name="CatchTheIngredientsEntrance" parent="." instance=ExtResource("2_b5kf5")]
+position = Vector2(201, 141)
+scene_path = "res://minigames/CatchTheIngredients/Main.tscn"
+
+[node name="FryTheMeat" parent="." instance=ExtResource("2_b5kf5")]
+position = Vector2(297, 143)
+scene_path = "res://minigames/FryTheMeat/Main.tscn"
+
+[node name="ChopTheVegetable" parent="." instance=ExtResource("2_b5kf5")]
+position = Vector2(393, 142)
+scene_path = "res://minigames/ChopTheVeggie/Main.tscn"
+
+[node name="Chef" parent="." instance=ExtResource("3_hvuor")]
+position = Vector2(426, 344)

@@ -19,7 +19,6 @@ func add_ingredient(new_ingredient: IngredientRecord):
 	for ingredient in ingredients_prepared:
 		if new_ingredient.name == ingredient.name:
 			ingredient.quantity = ingredient.quantity + new_ingredient.quantity
-			score_updated.emit(ingredient)
 			exists = true
 	#else add instance
 	if exists == false:
@@ -27,13 +26,20 @@ func add_ingredient(new_ingredient: IngredientRecord):
 	
 	#sort descending by quantity
 	ingredients_prepared.sort_custom(func(a, b): return a.quantity > b.quantity)
+	score_updated.emit()
+	return
 
 ##Decrements the quantity of an ingredients record
 func remove_ingredient(the_ingredient: IngredientRecord):
 	for ingredient in ingredients_prepared:
 		if the_ingredient.name == ingredient.name:
 			ingredient.quantity = clamp(ingredient.quantity - the_ingredient.quantity, 0, 999)
-			score_updated.emit(ingredient)
+			score_updated.emit()
 	#sort descending by quantity
 	ingredients_prepared.sort_custom(func(a, b): return a.quantity > b.quantity)
+	score_updated.emit()
+
+func add_soup(soup_record: IngredientRecord):
+	soup_prepared.quantity += soup_record.quantity
+	score_updated.emit()
 	

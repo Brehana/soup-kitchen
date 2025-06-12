@@ -42,6 +42,3 @@ func _on_collection_zone_body_entered(body: Node2D) -> void:
 			$CanvasLayer/Recipe.collect_meat()
 		body.queue_free()
 	
-
-func _on_recipe_recipe_completed() -> void:
-	IngredientsTracker.add_ingredient(IngredientRecord.new("Pot", "N/A", 1))

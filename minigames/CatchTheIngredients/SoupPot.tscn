@@ -61,4 +61,3 @@ scale = Vector2(2.8761, 2.5815)
 polygon = PackedVector2Array(-257, -128, -192, -129, -215, 101, 190, 101, 168, -125, 251, -125, 251, 126, -259, 125)
 
 [connection signal="body_entered" from="CollectionZone" to="." method="_on_collection_zone_body_entered"]
-[connection signal="recipe_completed" from="CanvasLayer/Recipe" to="." method="_on_recipe_recipe_completed"]

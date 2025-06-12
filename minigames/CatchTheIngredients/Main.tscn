@@ -27,6 +27,8 @@ shape = SubResource("RectangleShape2D_uu6xs")
 position = Vector2(1920, 727)
 shape = SubResource("RectangleShape2D_uu6xs")
 
+[node name="IngredientsTrackerUI" parent="." instance=ExtResource("4_01llf")]
+
 [node name="IngredientSpawner" parent="." instance=ExtResource("2_d47tq")]
 position = Vector2(227, -112)
 
@@ -41,5 +43,3 @@ position = Vector2(1293, -136)
 
 [node name="IngredientSpawner5" parent="." instance=ExtResource("2_d47tq")]
 position = Vector2(1654, -120)
-
-[node name="IngredientsTrackerUI" parent="." instance=ExtResource("4_01llf")]

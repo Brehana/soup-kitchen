@@ -1,23 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyp7m2712qqpi"]
+[gd_scene load_steps=5 format=3 uid="uid://cyp7m2712qqpi"]
 
 [ext_resource type="Script" uid="uid://dyvtnybh3waej" path="res://minigames/FryTheMeat/main.gd" id="1_m8msn"]
 [ext_resource type="PackedScene" uid="uid://bqyqv5aoq32vg" path="res://minigames/FryTheMeat/Pan.tscn" id="1_ptuye"]
 [ext_resource type="PackedScene" uid="uid://e1uyeuwskgos" path="res://IngredientsTrackerUI.tscn" id="3_ylocl"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5a1q1"]
-friction = 0.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhr8g"]
-size = Vector2(1981, 124)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7h3s8"]
-friction = 0.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibxeq"]
-size = Vector2(548, 91)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ye3e5"]
-font_size = 41
 
 [sub_resource type="LabelSettings" id="LabelSettings_ylocl"]
 font_size = 54
@@ -36,16 +21,16 @@ z_index = 5
 position = Vector2(524, 127)
 
 [node name="Counter" type="Polygon2D" parent="Scenery"]
-position = Vector2(-947, 444)
+position = Vector2(-731, 816)
 scale = Vector2(3.51496, 2.77778)
 color = Color(0.972549, 0.682353, 0.494118, 1)
 polygon = PackedVector2Array(0, 0, 635, 0, 635, 45, 317.648, 45, 0, 45)
 
 [node name="HotPlate" type="Polygon2D" parent="Scenery"]
-position = Vector2(-300, 369)
+position = Vector2(-172, 737)
 scale = Vector2(0.856693, 1.08889)
 color = Color(0.881937, 0.881937, 0.881937, 1)
-polygon = PackedVector2Array(0, 0, 321.89, 0, 635, 0, 635, 45, 317.648, 45, 0, 45)
+polygon = PackedVector2Array(0, 0, 321.89, 0, 635, 0, 635, 45, 537.819, 45, 317.648, 45, 0, 45)
 
 [node name="HotPlateStovetop" type="Polygon2D" parent="Scenery/HotPlate"]
 show_behind_parent = true
@@ -66,32 +51,6 @@ scale = Vector2(0.095588, 1)
 color = Color(0.366595, 0.366595, 0.366595, 1)
 polygon = PackedVector2Array(0, 0, 321.89, 0, 635, 0, 635, 45, 317.648, 45, 0, 45)
 
-[node name="CounterHitbox" type="StaticBody2D" parent="Scenery"]
-position = Vector2(-70, 508)
-collision_layer = 4
-physics_material_override = SubResource("PhysicsMaterial_5a1q1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/CounterHitbox"]
-position = Vector2(-1, -1)
-shape = SubResource("RectangleShape2D_rhr8g")
-
-[node name="HotPlateHitbox" type="StaticBody2D" parent="Scenery"]
-position = Vector2(-40, 395)
-collision_layer = 4
-physics_material_override = SubResource("PhysicsMaterial_7h3s8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenery/HotPlateHitbox"]
-position = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_ibxeq")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 61.0
-offset_top = 34.0
-offset_right = 101.0
-offset_bottom = 57.0
-text = "x0"
-label_settings = SubResource("LabelSettings_ye3e5")
-
 [node name="FryableSpawnMarker" type="Marker2D" parent="."]
 position = Vector2(649, -3)
 
@@ -101,24 +60,26 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FryableLossArea"]
-position = Vector2(-121.086, 0.00012207)
-scale = Vector2(1.08836, 1)
+position = Vector2(155, 198)
+scale = Vector2(1.48897, 1.00808)
 polygon = PackedVector2Array(-659, 1130, -585, 1006, 791, 1006, 902, 1127)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="FryableLossArea"]
-position = Vector2(283, 234)
+position = Vector2(338, 239)
 rotation = 1.57617
+scale = Vector2(1.22756, 0.993707)
 polygon = PackedVector2Array(-659, 1130, -585, 1006, 791, 1006, 902, 1127)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="FryableLossArea"]
-position = Vector2(96.264, 667.999)
+position = Vector2(409, 324)
 rotation = 3.15239
-scale = Vector2(1.08227, 1)
+scale = Vector2(1.81411, 0.825033)
 polygon = PackedVector2Array(-659, 1130, -585, 1006, 791, 1006, 902, 1127)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="FryableLossArea"]
-position = Vector2(-260, 442)
+position = Vector2(305, 442)
 rotation = 4.71712
+scale = Vector2(1.22623, 0.988418)
 polygon = PackedVector2Array(-659, 1130, -585, 1006, 791, 1006, 902, 1127)
 
 [node name="TimeRemaining" type="Label" parent="."]

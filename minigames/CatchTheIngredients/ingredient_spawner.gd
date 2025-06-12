@@ -1,12 +1,5 @@
 class_name IngredientSpawner extends Marker2D
 
-##This is for test purposes only, delete soon
-@export var ingredients: Array[IngredientRecord]
-
-func _ready() -> void:
-	for ingredient in ingredients:
-		IngredientsTracker.add_ingredient(ingredient)
-
 ##A weighted RNG machine.
 ##Drops ingredients randomly, weighted according to how many ingredients
 ##the player has prepared.
@@ -33,12 +26,13 @@ func roll() -> IngredientRecord:
 
 #Spawns rolled ingredient and resets timer
 func _on_timer_timeout() -> void:
-	var ingredient = roll()
+	if(IngredientsTracker.ingredients_prepared.is_empty() == false):
+		var ingredient = roll()
 	
-	var scene = load(ingredient.filepath)
-	var instance = scene.instantiate()
-	get_tree().current_scene.add_child(instance)
-	instance.position = position
+		var scene = load(ingredient.filepath)
+		var instance = scene.instantiate()
+		get_tree().current_scene.add_child(instance)
+		instance.position = position
 	
 	$Timer.wait_time = randf_range(1, 3)
 	$Timer.start()

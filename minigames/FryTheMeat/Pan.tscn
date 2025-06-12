@@ -10,6 +10,7 @@ size = Vector2(580, 57)
 radius = 27.0185
 
 [node name="Pan" type="CharacterBody2D"]
+position = Vector2(6, 0)
 collision_mask = 0
 floor_stop_on_slope = false
 floor_block_on_wall = false
@@ -83,10 +84,10 @@ disabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Horizontal" parent="CanvasLayer" instance=ExtResource("2_3pasn")]
-position = Vector2(930, 362)
+position = Vector2(1394, 748.44)
 
 [node name="Vertical" parent="CanvasLayer" instance=ExtResource("2_3pasn")]
-position = Vector2(956.783, 353)
+position = Vector2(1420.78, 739.44)
 rotation = 1.5708
 scale = Vector2(0.480001, 2.87829)
 
