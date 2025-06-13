@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbsxwfmyo0pvu"]
+[gd_scene load_steps=7 format=3 uid="uid://cbsxwfmyo0pvu"]
 
-[ext_resource type="Script" uid="uid://cyjeorhlgbnd" path="res://minigames/CatchTheIngredients/main.gd" id="1_01llf"]
+[ext_resource type="Script" uid="uid://0onjypoghmcw" path="res://minigames/minigame.gd" id="1_01llf"]
 [ext_resource type="PackedScene" uid="uid://cskwqr63a2jff" path="res://minigames/CatchTheIngredients/SoupPot.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://iafyqweu5qvw" path="res://minigames/CatchTheIngredients/IngredientSpawner.tscn" id="2_d47tq"]
 [ext_resource type="PackedScene" uid="uid://e1uyeuwskgos" path="res://IngredientsTrackerUI.tscn" id="4_01llf"]
@@ -8,8 +8,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
 size = Vector2(31, 674)
 
+[sub_resource type="LabelSettings" id="LabelSettings_c5p8a"]
+font_size = 100
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_01llf")
+next_game_filepath = "res://minigames/ScoreBoard/ScoreBoard.tscn"
 
 [node name="SoupPot" parent="." instance=ExtResource("1_glv2v")]
 position = Vector2(969, 1078)
@@ -43,3 +49,16 @@ position = Vector2(1293, -136)
 
 [node name="IngredientSpawner5" parent="." instance=ExtResource("2_d47tq")]
 position = Vector2(1654, -120)
+
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 962.0
+offset_top = 32.0
+offset_right = 1019.0
+offset_bottom = 169.0
+text = "0"
+label_settings = SubResource("LabelSettings_c5p8a")
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

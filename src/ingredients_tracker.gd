@@ -42,4 +42,9 @@ func remove_ingredient(the_ingredient: IngredientRecord):
 func add_soup(soup_record: IngredientRecord):
 	soup_prepared.quantity += soup_record.quantity
 	score_updated.emit()
+
+func reset():
+	ingredients_prepared.clear()
+	soup_prepared.quantity = 0
+	
 	

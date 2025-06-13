@@ -11,4 +11,4 @@ func update_view():
 				$IngredientsFrame/CarrotSprite/CarrotLabel.text = "x" + str(ingredient.quantity)
 			"Meat":
 				$IngredientsFrame/MeatSprite/MeatLabel.text = "x" + str(ingredient.quantity)
-	$IngredientsFrame/SoupSprite/SoupLabel.text = "x" + str(IngredientsTracker.soup_prepared.quantity)
+	$SoupFrame/SoupSprite/SoupLabel.text = "x" + str(IngredientsTracker.soup_prepared.quantity)

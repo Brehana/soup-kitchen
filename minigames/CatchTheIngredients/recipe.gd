@@ -37,8 +37,6 @@ func collect_veggie():
 		return
 	elif(veggies_collected == veggies_required && meat_collected == meat_required):
 		IngredientsTracker.add_soup(IngredientRecord.new("Soup", "N/A", 1))
-		IngredientsTracker.remove_ingredient(IngredientRecord.new("Veggie", "res://minigames/CatchTheIngredients/VegetableIngredient.tscn", veggies_required))
-		IngredientsTracker.remove_ingredient(IngredientRecord.new("Meat", "res://minigames/CatchTheIngredients/MeatIngredient.tscn", meat_required))
 		generate_recipe()
 		reset()
 		return
@@ -52,8 +50,6 @@ func collect_meat():
 		return
 	elif(veggies_collected == veggies_required && meat_collected == meat_required):
 		IngredientsTracker.add_soup(IngredientRecord.new("Soup", "N/A", 1))
-		IngredientsTracker.remove_ingredient(IngredientRecord.new("Veggie", "res://minigames/CatchTheIngredients/VegetableIngredient.tscn", veggies_required))
-		IngredientsTracker.remove_ingredient(IngredientRecord.new("Meat", "res://minigames/CatchTheIngredients/MeatIngredient.tscn", meat_required))
 		generate_recipe()
 		reset()
 	update_view()

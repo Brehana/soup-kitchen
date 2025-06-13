@@ -20,11 +20,6 @@ func spawn_fryable():
 	
 	fryables_in_scene = fryables_in_scene + 1
 
-func update_score_counter():
-	score = score + 1
-	$Label.text = "x" + str(score)
-
-
 func _on_fryable_loss_area_body_entered(body: Node2D) -> void:
 	if body is Fryable:
 		body.queue_free()

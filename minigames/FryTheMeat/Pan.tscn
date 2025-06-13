@@ -44,7 +44,7 @@ polygon = PackedVector2Array(0, 0, 635, 0, 635, 45, 0, 45)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-120, 0)
-polygon = PackedVector2Array(-686, -20, -644, -20, -644, 14, -109, 16, -108, -22, -54, -22, -54, 39, -684, 38)
+polygon = PackedVector2Array(-684, -49, -645, -49, -644, 14, -109, 16, -109, -49, -56, -50, -54, 39, -684, 38)
 
 [node name="Hand" type="Polygon2D" parent="."]
 position = Vector2(-289, 94)

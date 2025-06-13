@@ -5,7 +5,7 @@ class_name Fryable extends RigidBody2D
 
 signal fryable_cooked
 
-@export var max_cooked = 20.0
+@export var max_cooked = 10.0
 var cooked = 0.0
 
 func cook():

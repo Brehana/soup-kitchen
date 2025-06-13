@@ -1,22 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw1p4iytjnmga"]
+[gd_scene load_steps=6 format=3 uid="uid://dw1p4iytjnmga"]
 
 [ext_resource type="PackedScene" uid="uid://c2b36pa5miue" path="res://minigames/ChopTheVeggie/Chopper.tscn" id="1_pnux8"]
 [ext_resource type="Script" uid="uid://r6fv47nssbh4" path="res://minigames/ChopTheVeggie/chop_game.gd" id="1_s4bpb"]
 [ext_resource type="PackedScene" uid="uid://cfhxe5pl71duj" path="res://minigames/ChopTheVeggie/Carrot.tscn" id="2_s4bpb"]
 [ext_resource type="PackedScene" uid="uid://e1uyeuwskgos" path="res://IngredientsTrackerUI.tscn" id="4_pdrmh"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_pdrmh"]
+font_size = 100
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_s4bpb")
+next_game_filepath = "res://minigames/FryTheMeat/Main.tscn"
 
 [node name="ChoppableRespawnTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Chopper" parent="." instance=ExtResource("1_pnux8")]
+position = Vector2(-571, 0)
 
 [node name="Choppable" parent="." instance=ExtResource("2_s4bpb")]
 position = Vector2(-1, 0)
 
 [node name="IngredientsTrackerUI" parent="." instance=ExtResource("4_pdrmh")]
 
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 937.0
+offset_top = 45.0
+offset_right = 994.0
+offset_bottom = 182.0
+text = "0"
+label_settings = SubResource("LabelSettings_pdrmh")
+
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="ChoppableRespawnTimer" to="." method="_on_choppable_respawn_timer_timeout"]
 [connection signal="fully_chopped" from="Choppable" to="." method="_on_choppable_fully_chopped"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

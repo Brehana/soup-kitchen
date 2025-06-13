@@ -15,9 +15,9 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_tqily")
 
 [node name="IngredientsFrame" type="TextureRect" parent="."]
-offset_left = 1001.0
+offset_left = 1235.0
 offset_top = 19.0
-offset_right = 1354.0
+offset_right = 1498.0
 offset_bottom = 142.0
 scale = Vector2(1.64, 1.64)
 texture = ExtResource("1_gtft6")
@@ -50,12 +50,21 @@ offset_bottom = 87.6
 text = "x0"
 label_settings = SubResource("LabelSettings_geaxk")
 
-[node name="SoupSprite" type="Sprite2D" parent="IngredientsFrame"]
-position = Vector2(281.707, 60.3659)
-scale = Vector2(0.360609, 0.423653)
+[node name="SoupFrame" type="TextureRect" parent="."]
+offset_left = 1684.0
+offset_top = 19.0
+offset_right = 1916.0
+offset_bottom = 282.0
+scale = Vector2(1, 0.84)
+texture = ExtResource("1_gtft6")
+expand_mode = 1
+
+[node name="SoupSprite" type="Sprite2D" parent="SoupFrame"]
+position = Vector2(120.188, 128)
+scale = Vector2(0.636324, 0.932887)
 texture = ExtResource("4_sinr3")
 
-[node name="SoupLabel" type="Label" parent="IngredientsFrame/SoupSprite"]
+[node name="SoupLabel" type="Label" parent="SoupFrame/SoupSprite"]
 z_index = 1
 offset_left = 25.3636
 offset_top = -2.87858
@@ -63,11 +72,3 @@ offset_right = 146.363
 offset_bottom = 107.122
 text = "x0"
 label_settings = SubResource("LabelSettings_geaxk")
-
-[node name="GuestFrame" type="TextureRect" parent="."]
-offset_left = 1593.0
-offset_top = 13.0
-offset_right = 1908.0
-offset_bottom = 333.0
-texture = ExtResource("1_gtft6")
-expand_mode = 1

@@ -5,10 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://e1uyeuwskgos" path="res://IngredientsTrackerUI.tscn" id="3_ylocl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ylocl"]
-font_size = 54
+font_size = 100
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_m8msn")
+next_game_filepath = "res://minigames/CatchTheIngredients/Main.tscn"
 
 [node name="Pan" parent="." instance=ExtResource("1_ptuye")]
 position = Vector2(1060, 376)
@@ -82,15 +85,19 @@ rotation = 4.71712
 scale = Vector2(1.22623, 0.988418)
 polygon = PackedVector2Array(-659, 1130, -585, 1006, 791, 1006, 902, 1127)
 
-[node name="TimeRemaining" type="Label" parent="."]
-offset_left = 584.0
-offset_top = 23.0
-offset_right = 646.0
-offset_bottom = 97.0
-text = "60"
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 817.0
+offset_top = 19.0
+offset_right = 931.0
+offset_bottom = 156.0
+text = "0"
 label_settings = SubResource("LabelSettings_ylocl")
 
 [node name="IngredientsTrackerUI" parent="." instance=ExtResource("3_ylocl")]
 
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="Pan/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="FryableLossArea" to="." method="_on_fryable_loss_area_body_entered"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
